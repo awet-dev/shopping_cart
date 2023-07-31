@@ -40,6 +40,11 @@ The client wants to give a promotion of 1 for free when customer buy 2  for some
 1. **Choose Tools and Frameworks**: I have chosen Laravel to build the PHP microservice.
 
 2. **Instruction**: 
+    - Create .env file with the configuration given in env.example 
+    - Generate APP_KEY, run 
+        ```bash
+        php artisan key:generate
+        ```
     - To start the development server, run:
         ```bash
         php artisan serve
@@ -49,25 +54,26 @@ The client wants to give a promotion of 1 for free when customer buy 2  for some
         ```bash
         http://127.0.0.1:8000/shopping-cart
         ```
-    - Product Payload
-        | id  | name          | quantity | promotion | discount | price | vat |
-        |---- |-------------- |--------- |---------- |-------- |----- |---- |
-        | 1   | product one   | 3        | 1/2       | 10       | 43    | 12  |
-        | 2   | product two   | 2        | -         | 6        | 56    | 10  |
-        | 3   | product three | 5        | 1/4       | 0        | 33    | 10  |
+   
+3. **Data used and returned**: 
+    ## Product Payload
+    | id  | name          | quantity | promotion | discount | price | vat |
+    |---- |-------------- |--------- |---------- |-------- |----- |---- |
+    | 1   | product one   | 3        | 1/2       | 10       | 43    | 12  |
+    | 2   | product two   | 2        | -         | 6        | 56    | 10  |
+    | 3   | product three | 5        | 1/4       | 0        | 33    | 10  |
             
-    - Return data is: 
-        ## Cart Data
+    ## Cart Data
 
-        | Product ID | Name          | Price | Promotion | Discount % | VAT Rate | Quantity | Subtotal | Discount Amount | Promotion Amount | VAT Amount |
-        |------------|---------------|-------|-----------|------------|----------|----------|----------|-----------------|------------------|------------|
-        | 1          | product one   | $43   | 0.5       | 10%        | 12%      | 3        | $73.10   | $12.90          | $43.00           | $8.77      |
-        | 2          | product two   | $56   | -         | 6%         | 10%      | 2        | $105.28  | $6.72           | -                | $10.53     |
-        | 3          | product three | $33   | 0.25      | 0%         | 10%      | 5        | $132.00  | $0.00           | $33.00           | $13.20     |
+    | Product ID | Name          | Price | Promotion | Discount % | VAT Rate | Quantity | Subtotal | Discount Amount | Promotion Amount | VAT Amount |
+    |------------|---------------|-------|-----------|------------|----------|----------|----------|-----------------|------------------|------------|
+    | 1          | product one   | $43   | 0.5       | 10%        | 12%      | 3        | $73.10   | $12.90          | $43.00           | $8.77      |
+    | 2          | product two   | $56   | -         | 6%         | 10%      | 2        | $105.28  | $6.72           | -                | $10.53     |
+    | 3          | product three | $33   | 0.25      | 0%         | 10%      | 5        | $132.00  | $0.00           | $33.00           | $13.20     |
 
-        **Final Total:** $342.88
+    **Final Total:** $342.88
 
-        **Note:** The "Promotion" value represents a ratio of free to bought quantity. For example, a promotion value of 0.5 means you get one item free for every two items purchased.
+    **Note:** The "Promotion" value represents a ratio of free to bought quantity. For example, a promotion value of 0.5 means you get one item free for every two items purchased.   
 
 
 
