@@ -19,4 +19,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/cart', [CartController::class, 'index']);
+Route::get('/shopping-cart', [CartController::class, 'index']);

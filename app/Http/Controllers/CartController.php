@@ -2,13 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Database\Eloquent\Concerns\HasUniqueIds;
 use Illuminate\Http\Response;
 
 class CartController extends Controller
 {
-    use HasUniqueIds;
-
     public function index(): Response
     {
         $cart_items = $this->buildCartItems();
